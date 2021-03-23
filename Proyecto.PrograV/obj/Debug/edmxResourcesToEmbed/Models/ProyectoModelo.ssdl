@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Asistencia">
+    <Key>
+      <PropertyRef Name="IDAsistencia" />
+    </Key>
+    <Property Name="IDAsistencia" Type="int" Nullable="false" />
+    <Property Name="IDCurso" Type="int" />
+    <Property Name="IDGrupo" Type="int" />
+    <Property Name="IDEstudiante" Type="int" />
+    <Property Name="Fecha" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tipo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Carrera">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_PROGRA5_PROYECTO2,3.dbo.contacto' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="contacto">
+    <Key>
+      <PropertyRef Name="ID_Estudiante" />
+    </Key>
+    <Property Name="ID_Estudiante" Type="int" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="15" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_PROGRA5_PROYECTO2,3.dbo.Curso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Curso">
+    <Key>
+      <PropertyRef Name="IDCarrera" />
+    </Key>
+    <Property Name="IDCurso" Type="int" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDCarrera" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estudiantes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TipoID" Type="nvarchar" MaxLength="15" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Apellidos" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaNacimiento" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Grupo">
+    <Key>
+      <PropertyRef Name="IDGrupo" />
+    </Key>
+    <Property Name="IDGrupo" Type="int" Nullable="false" />
+    <Property Name="IDCurso" Type="int" />
+    <Property Name="IDProfesor" Type="int" />
+    <Property Name="NumeroGrupo" Type="int" />
+    <Property Name="Horario" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDPeriodo" Type="int" />
+  </EntityType>
+  <EntityType Name="Matricula">
+    <Key>
+      <PropertyRef Name="IDMatricula" />
+    </Key>
+    <Property Name="IDMatricula" Type="int" Nullable="false" />
+    <Property Name="IDEstudiante" Type="int" />
+    <Property Name="IDGrupo" Type="int" />
+    <Property Name="Tipo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nota" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Periodo">
+    <Key>
+      <PropertyRef Name="IDPeriodo" />
+    </Key>
+    <Property Name="IDPeriodo" Type="int" Nullable="false" />
+    <Property Name="Año" Type="nvarchar" MaxLength="50" />
+    <Property Name="NumeroPeriodo" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaInicio" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaFinal" Type="nvarchar" MaxLength="50" />
+    <Property Name="Estado" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Profesor">
+    <Key>
+      <PropertyRef Name="IDProfesor" />
+    </Key>
+    <Property Name="IDProfesor" Type="int" Nullable="false" />
+    <Property Name="TipoID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Apellidos" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
+    <Property Name="Correo" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaNacimiento" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Asistencia" EntityType="Self.Asistencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Carrera" EntityType="Self.Carrera" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estudiantes" EntityType="Self.Estudiantes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grupo" EntityType="Self.Grupo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Matricula" EntityType="Self.Matricula" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Periodo" EntityType="Self.Periodo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profesor" EntityType="Self.Profesor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contacto" EntityType="Self.contacto" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [contacto].[ID_Estudiante] AS [ID_Estudiante], 
+    [contacto].[telefono] AS [telefono], 
+    [contacto].[email] AS [email]
+    FROM [dbo].[contacto] AS [contacto]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Curso" EntityType="Self.Curso" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Curso].[IDCurso] AS [IDCurso], 
+    [Curso].[Nombre] AS [Nombre], 
+    [Curso].[IDCarrera] AS [IDCarrera]
+    FROM [dbo].[Curso] AS [Curso]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

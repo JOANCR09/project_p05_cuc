@@ -1,11 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Asistencia">
+    <Key>
+      <PropertyRef Name="IDAsistencia" />
+    </Key>
+    <Property Name="IDAsistencia" Type="Int32" Nullable="false" />
+    <Property Name="IDCurso" Type="Int32" />
+    <Property Name="IDGrupo" Type="Int32" />
+    <Property Name="IDEstudiante" Type="Int32" />
+    <Property Name="Fecha" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="Carrera">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Estudiante">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TipoID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaNacimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Grupo">
+    <Key>
+      <PropertyRef Name="IDGrupo" />
+    </Key>
+    <Property Name="IDGrupo" Type="Int32" Nullable="false" />
+    <Property Name="IDCurso" Type="Int32" />
+    <Property Name="IDProfesor" Type="Int32" />
+    <Property Name="NumeroGrupo" Type="Int32" />
+    <Property Name="Horario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDPeriodo" Type="Int32" />
   </EntityType>
   <EntityType Name="Matricula">
     <Key>
@@ -40,68 +72,6 @@
     <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="FechaNacimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="Curso">
-    <Key>
-      <PropertyRef Name="IDCarrera" />
-    </Key>
-    <Property Name="IDCurso" Type="Int32" />
-    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IDCarrera" Type="Int32" Nullable="false" />
-  </EntityType>
-  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Carreras" EntityType="Self.Carrera" />
-    <EntitySet Name="Matriculas" EntityType="Self.Matricula" />
-    <EntitySet Name="Periodoes" EntityType="Self.Periodo" />
-    <EntitySet Name="Profesors" EntityType="Self.Profesor" />
-    <EntitySet Name="Cursoes" EntityType="Self.Curso" />
-    <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagram" />
-    <EntitySet Name="Asistencias" EntityType="Model.Asistencia" />
-    <EntitySet Name="Grupoes" EntityType="Model.Grupo" />
-    <EntitySet Name="Estudiantes" EntityType="Model.Estudiante" />
-    <EntitySet Name="contactoes" EntityType="Model.contacto" />
-  </EntityContainer>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="Asistencia">
-    <Key>
-      <PropertyRef Name="IDAsistencia" />
-    </Key>
-    <Property Name="IDAsistencia" Type="Int32" Nullable="false" />
-    <Property Name="IDCurso" Type="Int32" />
-    <Property Name="IDGrupo" Type="Int32" />
-    <Property Name="IDEstudiante" Type="Int32" />
-    <Property Name="Fecha" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="Grupo">
-    <Key>
-      <PropertyRef Name="IDGrupo" />
-    </Key>
-    <Property Name="IDGrupo" Type="Int32" Nullable="false" />
-    <Property Name="IDCurso" Type="Int32" />
-    <Property Name="IDProfesor" Type="Int32" />
-    <Property Name="NumeroGrupo" Type="Int32" />
-    <Property Name="Horario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IDPeriodo" Type="Int32" />
-  </EntityType>
-  <EntityType Name="Estudiante">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="TipoID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="FechaNacimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="contacto">
     <Key>
       <PropertyRef Name="ID_Estudiante" />
@@ -110,4 +80,23 @@
     <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="Curso">
+    <Key>
+      <PropertyRef Name="IDCarrera" />
+    </Key>
+    <Property Name="IDCurso" Type="Int32" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDCarrera" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Asistencias" EntityType="Self.Asistencia" />
+    <EntitySet Name="Carreras" EntityType="Self.Carrera" />
+    <EntitySet Name="Estudiantes" EntityType="Self.Estudiante" />
+    <EntitySet Name="Grupoes" EntityType="Self.Grupo" />
+    <EntitySet Name="Matriculas" EntityType="Self.Matricula" />
+    <EntitySet Name="Periodoes" EntityType="Self.Periodo" />
+    <EntitySet Name="Profesors" EntityType="Self.Profesor" />
+    <EntitySet Name="contactoes" EntityType="Self.contacto" />
+    <EntitySet Name="Cursoes" EntityType="Self.Curso" />
+  </EntityContainer>
 </Schema>

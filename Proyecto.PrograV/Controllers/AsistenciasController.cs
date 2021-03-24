@@ -14,7 +14,7 @@ namespace Proyecto.PrograV.Controllers
 {
     public class AsistenciasController : ApiController
     {
-        private Entities db = new Entities();
+        private Entities1 db = new Entities1();
 
         // GET: api/Asistencias
         public IQueryable<Asistencia> GetAsistencias()

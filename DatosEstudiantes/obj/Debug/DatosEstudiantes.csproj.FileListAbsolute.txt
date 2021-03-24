@@ -1,0 +1,9 @@
+C:\Users\Usuario\Source\Repos\project_p05_cuc\DatosEstudiantes\bin\Debug\DatosEstudiantes.dll
+C:\Users\Usuario\Source\Repos\project_p05_cuc\DatosEstudiantes\bin\Debug\DatosEstudiantes.pdb
+C:\Users\Usuario\Source\Repos\project_p05_cuc\DatosEstudiantes\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Usuario\Source\Repos\project_p05_cuc\DatosEstudiantes\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Usuario\Source\Repos\project_p05_cuc\DatosEstudiantes\obj\Debug\DatosEstudiantes.csprojAssemblyReference.cache
+C:\Users\Usuario\Source\Repos\project_p05_cuc\DatosEstudiantes\obj\Debug\DatosEstudiantes.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Source\Repos\project_p05_cuc\DatosEstudiantes\obj\Debug\DatosEstudiantes.csproj.CopyComplete
+C:\Users\Usuario\Source\Repos\project_p05_cuc\DatosEstudiantes\obj\Debug\DatosEstudiantes.dll
+C:\Users\Usuario\Source\Repos\project_p05_cuc\DatosEstudiantes\obj\Debug\DatosEstudiantes.pdb

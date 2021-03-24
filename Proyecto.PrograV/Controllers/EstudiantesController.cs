@@ -15,7 +15,7 @@ namespace Proyecto.PrograV.Controllers
 {
     public class EstudiantesController : ApiController
     {
-        private Entities db = new Entities();
+        private Entities1 db = new Entities1();
 
         // GET: api/Estudiantes
         public IQueryable<Estudiante> GetEstudiantes()

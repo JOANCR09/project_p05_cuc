@@ -101,8 +101,8 @@
     <Content Include="Global.asax" />
     <Content Include="Models\ProyectoModelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ProyectoModelo.Context.cs</LastGenOutput>
       <DependentUpon>ProyectoModelo.edmx</DependentUpon>
+      <LastGenOutput>ProyectoModelo.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ProyectoModelo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -116,13 +116,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AsistenciasController.cs" />
     <Compile Include="Controllers\CarrerasController.cs" />
-    <Compile Include="Controllers\contactoesController.cs" />
-    <Compile Include="Controllers\CursoesController.cs" />
+    <Compile Include="Controllers\contactosController.cs" />
+    <Compile Include="Controllers\CursosController.cs" />
     <Compile Include="Controllers\EstudiantesController.cs" />
-    <Compile Include="Controllers\GrupoesController.cs" />
+    <Compile Include="Controllers\GruposController.cs" />
     <Compile Include="Controllers\MatriculasController.cs" />
-    <Compile Include="Controllers\PeriodoesController.cs" />
-    <Compile Include="Controllers\ProfesorsController.cs" />
+    <Compile Include="Controllers\PeriodosController.cs" />
+    <Compile Include="Controllers\ProfesoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -167,9 +167,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProyectoModelo.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>ProyectoModelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

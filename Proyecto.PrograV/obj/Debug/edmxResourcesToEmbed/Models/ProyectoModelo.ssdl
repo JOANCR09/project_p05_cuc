@@ -18,8 +18,8 @@
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_PROGRA5_PROYECTO2,3.dbo.contacto' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DB_PROGRA5_PROYECTO2,3.dbo.contacto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="contacto">
     <Key>
       <PropertyRef Name="ID_Estudiante" />
@@ -28,8 +28,8 @@ warning 6002: The table/view 'DB_PROGRA5_PROYECTO2,3.dbo.contacto' does not have
     <Property Name="telefono" Type="varchar" MaxLength="15" />
     <Property Name="email" Type="varchar" MaxLength="50" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_PROGRA5_PROYECTO2,3.dbo.Curso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DB_PROGRA5_PROYECTO2,3.dbo.Curso' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="Curso">
     <Key>
       <PropertyRef Name="IDCarrera" />
@@ -92,16 +92,6 @@ warning 6002: The table/view 'DB_PROGRA5_PROYECTO2,3.dbo.Curso' does not have a 
     <Property Name="Correo" Type="nvarchar" MaxLength="50" />
     <Property Name="FechaNacimiento" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityContainer Name="ModelStoreContainer">
     <EntitySet Name="Asistencia" EntityType="Self.Asistencia" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Carrera" EntityType="Self.Carrera" Schema="dbo" store:Type="Tables" />
@@ -110,7 +100,6 @@ warning 6002: The table/view 'DB_PROGRA5_PROYECTO2,3.dbo.Curso' does not have a 
     <EntitySet Name="Matricula" EntityType="Self.Matricula" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Periodo" EntityType="Self.Periodo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Profesor" EntityType="Self.Profesor" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="contacto" EntityType="Self.contacto" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [contacto].[ID_Estudiante] AS [ID_Estudiante], 
